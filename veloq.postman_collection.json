@@ -1,0 +1,203 @@
+{
+  "info": {
+    "_postman_id": "7bc16ccd-a588-4e71-8728-2c9285ba9aae",
+    "name": "veloq",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58292722",
+    "_collection_link": "https://go.postman.co/collection/58292722-7bc16ccd-a588-4e71-8728-2c9285ba9aae?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "insta post",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0c8m}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "image_url",
+              "value": "https://images.unsplash.com/photo-1780969905523-b0689163243e?q=80&w=465&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+              "key": "caption",
+              "value": "My first Instagram API test"
+            },
+            {
+              "key": "access_token",
+              "value": "IGAAV0jspKREhBZAFpTZAmNTaEFIS3cxMGdmeGJiR1MyWFh3SXVvSm1JbjVmNmFZAdkdfdDZAHV0J5aDVNTTBUenR4SXl5VERMeEVLMDlMR2w1dFgyZAmh0U1JwZAno3X1JBbWxxRWFtREQ2SEVqUzFMS0V0eUxtemozTVdaTUl3M09LNAZDZD"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://graph.instagram.com/v25.0/17841433886128760/media",
+          "protocol": "https",
+          "host": [
+            "graph",
+            "instagram",
+            "com"
+          ],
+          "path": [
+            "v25.0",
+            "17841433886128760",
+            "media"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "insta status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://graph.instagram.com/v25.0/18101283815129538?access_token=status_code,status&access_token=IGAAV0jspKREhBZAFpTZAmNTaEFIS3cxMGdmeGJiR1MyWFh3SXVvSm1JbjVmNmFZAdkdfdDZAHV0J5aDVNTTBUenR4SXl5VERMeEVLMDlMR2w1dFgyZAmh0U1JwZAno3X1JBbWxxRWFtREQ2SEVqUzFMS0V0eUxtemozTVdaTUl3M09LNAZDZD",
+          "protocol": "https",
+          "host": [
+            "graph",
+            "instagram",
+            "com"
+          ],
+          "path": [
+            "v25.0",
+            "18101283815129538"
+          ],
+          "query": [
+            {
+              "key": "access_token",
+              "value": "status_code,status"
+            },
+            {
+              "key": "access_token",
+              "value": "IGAAV0jspKREhBZAFpTZAmNTaEFIS3cxMGdmeGJiR1MyWFh3SXVvSm1JbjVmNmFZAdkdfdDZAHV0J5aDVNTTBUenR4SXl5VERMeEVLMDlMR2w1dFgyZAmh0U1JwZAno3X1JBbWxxRWFtREQ2SEVqUzFMS0V0eUxtemozTVdaTUl3M09LNAZDZD"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "insta publish post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "creation_id",
+              "value": "18101283815129538"
+            },
+            {
+              "key": "access_token",
+              "value": "IGAAV0jspKREhBZAFpTZAmNTaEFIS3cxMGdmeGJiR1MyWFh3SXVvSm1JbjVmNmFZAdkdfdDZAHV0J5aDVNTTBUenR4SXl5VERMeEVLMDlMR2w1dFgyZAmh0U1JwZAno3X1JBbWxxRWFtREQ2SEVqUzFMS0V0eUxtemozTVdaTUl3M09LNAZDZD"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://graph.instagram.com/v25.0/17841433886128760/media_publish",
+          "protocol": "https",
+          "host": [
+            "graph",
+            "instagram",
+            "com"
+          ],
+          "path": [
+            "v25.0",
+            "17841433886128760",
+            "media_publish"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "facebook publish post",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "url",
+              "value": "https://images.unsplash.com/photo-1780969905523-b0689163243e?q=80&w=465&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+              "key": "caption",
+              "value": "My first facebok API test"
+            },
+            {
+              "key": "access_token",
+              "value": "EAAT2OvQsDiUBSkLjfl7iovw0VpNHZBKFwkZC5WxKDeyHGL8zuycJB3NU73S7ZBp9ZCb3C7hv1WBZAJu3Y6xPSZBnQ4MWsO2dVYy7W34AEA8r7GTLV9WWFr3xTZCqkFZAhaKxvNMZAP9Xt8D0WhguUZAeC8VZC1Vo7cjdE39CNtyjIZCLWYjPjBPWgzZAOz89xCpprVv0p86GYVH024R8kmxNxDmadzZBPKynHwMcyPJr4PZC04hmF0ZD"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://graph.facebook.com/v26.0/1315245281672428/photos",
+          "protocol": "https",
+          "host": [
+            "graph",
+            "facebook",
+            "com"
+          ],
+          "path": [
+            "v26.0",
+            "1315245281672428",
+            "photos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "test n8n flow",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"caption\": \"Hello from my first n8n webhook\",\r\n  \"image_url\": \"https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsfGVufDB8fDB8fHww\",\r\n  \"platform\": \"instagram\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5678/webhook-test/social-publisher",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5678",
+          "path": [
+            "webhook-test",
+            "social-publisher"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0c8m",
+      "secret": true
+    }
+  ]
+}

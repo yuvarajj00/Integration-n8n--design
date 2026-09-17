@@ -73,7 +73,7 @@ Ensure `backend/.env` contains your Cloudinary credentials and n8n webhook:
 CLOUDINARY_CLOUD_NAME=cbl5jblk
 CLOUDINARY_API_KEY=639289117314277
 CLOUDINARY_API_SECRET=wSLqriwPClMS2MgSjbRSnGMD10I
-N8N_WEBHOOK_URL=http://localhost:5678/webhook-test/social-publisher
+N8N_WEBHOOK_URL=http://localhost:5678/webhook/social-publisher
 ```
 
 ### 4. Start the FastAPI Server:
@@ -147,7 +147,7 @@ The frontend will run at:
 | `POST` | `/api/uploads/image` | Upload image to Cloudinary | `multipart/form-data` with `file` |
 | `POST` | `/api/social-posts/publish` | Forward post to n8n webhook | `{"imageUrl": "...", "caption": "...", "platform": "..."}` |
 
-> **Note on Instagram Image URLs**: Meta's Instagram Graph API returns error `9004` if image URLs end with `.png`. The system automatically strips `.png` from the Cloudinary URL whenever publishing to **Instagram** or **Both**, allowing Instagram to download and accept the image without errors.
+> **Note on Instagram Image URLs**: Meta's Instagram Graph API returns error `9004` if image URLs end with `.png` or have no extension. The system automatically converts them to `.jpg` so Cloudinary on-the-fly streams standard JPEG (`image/jpeg`), allowing Instagram to download and publish without errors.
 
 ---
 

@@ -84,21 +84,44 @@ async def publish_social_post(request: PublishPostRequest):
 
     try:
         async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.post(N8N_WEBHOOK_URL, json=payload)
-            response_data = None
-            try:
-                response_data = response.json()
-            except Exception:
-                response_data = {"raw": response.text}
+            urls_to_try = [N8N_WEBHOOK_URL]
+            if "/webhook/" in N8N_WEBHOOK_URL:
+                urls_to_try.append(N8N_WEBHOOK_URL.replace("/webhook/", "/webhook-test/"))
+            elif "/webhook-test/" in N8N_WEBHOOK_URL:
+                urls_to_try.append(N8N_WEBHOOK_URL.replace("/webhook-test/", "/webhook/"))
 
-            return {
-                "success": response.is_success,
-                "status_code": response.status_code,
-                "message": "Post forwarded to n8n webhook successfully" if response.is_success else "n8n webhook returned error",
-                "n8n_response": response_data
-            }
-    except httpx.RequestError as exc:
+            last_response = None
+            response_data = None
+            for url in urls_to_try:
+                try:
+                    response = await client.post(url, json=payload)
+                    last_response = response
+                    try:
+                        response_data = response.json()
+                    except Exception:
+                        response_data = {"raw": response.text}
+
+                    if response.is_success:
+                        return {
+                            "success": True,
+                            "status_code": response.status_code,
+                            "webhook_url": url,
+                            "message": "Post forwarded to n8n webhook successfully",
+                            "n8n_response": response_data,
+                        }
+                except httpx.RequestError:
+                    continue
+
+            error_msg = response_data.get("message") if isinstance(response_data, dict) else str(response_data)
+            status = last_response.status_code if last_response else 502
+            raise HTTPException(
+                status_code=status,
+                detail=f"n8n webhook returned error (HTTP {status}): {error_msg or 'Check n8n execution log'}"
+            )
+    except HTTPException:
+        raise
+    except Exception as exc:
         raise HTTPException(
             status_code=502,
-            detail=f"Could not reach n8n webhook ({N8N_WEBHOOK_URL}). Ensure n8n is running and listening: {str(exc)}"
+            detail=f"Could not reach n8n webhook: {str(exc)}"
         )

@@ -44,3 +44,18 @@ VelorQ123
 
 velar.q
 VelorQ123
+
+Cloud name	
+cbl5jblk
+API key	
+639289117314277
+API secret	
+wSLqriwPClMS2MgSjbRSnGMD10I
+
+API environment variable	
+CLOUDINARY_URL=cloudinary://639289117314277:wSLqriwPClMS2MgSjbRSnGMD10I@cbl5jblk
+
+
+
+
+wSLqriwPClMS2MgSjbRSnGMD10I

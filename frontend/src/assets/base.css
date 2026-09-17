@@ -1,0 +1,47 @@
+:root {
+  --bg: #0a0e14;
+  --panel: #111826;
+  --panel2: #161f30;
+  --line: #243149;
+  --text: #e8edf5;
+  --muted: #8496b3;
+  --muted2: #5c6e8a;
+  --signal: #38e6b5;
+  --signal-dim: #1c6b56;
+  --amber: #ffb454;
+  --amber-dim: #7a5a2a;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(56, 230, 181, 0.07), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(255, 180, 84, 0.05), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--signal);
+  color: #04140f;
+}

@@ -1,0 +1,15 @@
+# Python
+backend/venv/
+backend/.env
+backend/**/__pycache__/
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/.env
+frontend/build/
+frontend/dist/
+
+# Logs & temp
+*.log
+

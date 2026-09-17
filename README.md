@@ -1,4 +1,4 @@
-# Media Publisher (BrandRelay / VelorQ)
+# Media Publisher 
 
 Full-stack social media publishing platform integrated with **Cloudinary**, **FastAPI**, **Vue 3**, and **n8n** for multi-platform publishing (Instagram & Facebook).
 

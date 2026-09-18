@@ -192,6 +192,78 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "instagram insghits of to 100 posts ",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://graph.instagram.com/v25.0/17841433886128760/media?fields=id,caption,media_type,media_url,permalink,timestamp,like_count,comments_count&access_token=IGAAV0jspKREhBZAFpTZAmNTaEFIS3cxMGdmeGJiR1MyWFh3SXVvSm1JbjVmNmFZAdkdfdDZAHV0J5aDVNTTBUenR4SXl5VERMeEVLMDlMR2w1dFgyZAmh0U1JwZAno3X1JBbWxxRWFtREQ2SEVqUzFMS0V0eUxtemozTVdaTUl3M09LNAZDZD&limit=100",
+          "protocol": "https",
+          "host": [
+            "graph",
+            "instagram",
+            "com"
+          ],
+          "path": [
+            "v25.0",
+            "17841433886128760",
+            "media"
+          ],
+          "query": [
+            {
+              "key": "fields",
+              "value": "id,caption,media_type,media_url,permalink,timestamp,like_count,comments_count"
+            },
+            {
+              "key": "access_token",
+              "value": "IGAAV0jspKREhBZAFpTZAmNTaEFIS3cxMGdmeGJiR1MyWFh3SXVvSm1JbjVmNmFZAdkdfdDZAHV0J5aDVNTTBUenR4SXl5VERMeEVLMDlMR2w1dFgyZAmh0U1JwZAno3X1JBbWxxRWFtREQ2SEVqUzFMS0V0eUxtemozTVdaTUl3M09LNAZDZD"
+            },
+            {
+              "key": "limit",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "facebook top 100 posts inshits",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://graph.facebook.com/v26.0/1315245281672428/posts?fields=id,message,created_time,permalink_url,attachments&access_token=EAAT2OvQsDiUBSsefRtvotoZCLZBhWXZC0r7GC9rADjm14jxydXJeRV2bTir99ORPH59oAKmdukplSHdBF7wpPfpVaFm5IG0Mwkipi1sZBSt7pPQhWdQ5C9525E7xR7g8KZBZBTyrBF4xXeuzhBBegv28YGYpHRVcEk7v3Uxmm2aZBgreJxSUeiCNZBTyOoj67ruMqgnDUDcxsnHP7Dx1LD5H5HIU1saUZAZAlqooCKZAgcZD&limit=100",
+          "protocol": "https",
+          "host": [
+            "graph",
+            "facebook",
+            "com"
+          ],
+          "path": [
+            "v26.0",
+            "1315245281672428",
+            "posts"
+          ],
+          "query": [
+            {
+              "key": "fields",
+              "value": "id,message,created_time,permalink_url,attachments"
+            },
+            {
+              "key": "access_token",
+              "value": "EAAT2OvQsDiUBSsefRtvotoZCLZBhWXZC0r7GC9rADjm14jxydXJeRV2bTir99ORPH59oAKmdukplSHdBF7wpPfpVaFm5IG0Mwkipi1sZBSt7pPQhWdQ5C9525E7xR7g8KZBZBTyrBF4xXeuzhBBegv28YGYpHRVcEk7v3Uxmm2aZBgreJxSUeiCNZBTyOoj67ruMqgnDUDcxsnHP7Dx1LD5H5HIU1saUZAZAlqooCKZAgcZD"
+            },
+            {
+              "key": "limit",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
